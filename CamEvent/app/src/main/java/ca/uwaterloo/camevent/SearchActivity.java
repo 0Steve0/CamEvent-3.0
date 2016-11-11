@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 
@@ -66,7 +67,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             }
 
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
+        fromDatePickerDialog.getDatePicker().setMinDate(new Date().getTime());
     }
 
     @Override

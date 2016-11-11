@@ -28,7 +28,8 @@
             android:id="@+id/spinnerBuilding"
             style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_weight="1"
-            android:background="@drawable/my_spinner" />
+            android:background="@drawable/my_spinner"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="260dp"
@@ -63,7 +64,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/post"
-            android:onClick="post" />
+            android:onClick="post"
+            android:drawableLeft="@drawable/post"
+            android:color="@color/spinnerBackground" />
     </LinearLayout>
 
 </LinearLayout>

@@ -10,14 +10,14 @@
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="70dp">
-
         <Spinner
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/spinnerBuilding"
             style="@style/Widget.AppCompat.Spinner.Underlined"
             android:background="@drawable/my_spinner" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -59,7 +59,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:onClick="search"
-            android:hint="@string/search"/>
+            android:hint="@string/search"
+            android:drawableLeft="@drawable/search"
+            android:color="@color/spinnerBackground"
+            />
     </LinearLayout>
 
 </LinearLayout>
