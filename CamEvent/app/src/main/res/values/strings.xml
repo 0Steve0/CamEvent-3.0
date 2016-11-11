@@ -5,10 +5,8 @@
     <string name="location_permission_denied">location_permission_denied</string>
     <string name="permission_required_toast">permission_required_toast</string>
     <string name="permission_rationale_location">permission_rationale_location</string>
-    <string name="textViewBuilding">Building</string>
-    <string name="textViewType">Type</string>
-    <string name="textViewStart">Start</string>
-    <string name="textViewEnd">End</string>
+    <string name="start">Pick a date</string>
+    <string name="keyWord">Key Word</string>
     <string name="search">Search</string>
     <string name="post">Post</string>
     <string name="title">Title</string>
