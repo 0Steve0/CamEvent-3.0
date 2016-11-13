@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_search">
+    android:background="@drawable/b1">
     <LinearLayout
         android:layout_width="260dp"
         android:layout_height="50dp"
@@ -17,20 +17,29 @@
             android:hint="@string/title"
             android:drawableLeft="@drawable/word"/>
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@drawable/location" />
         <Spinner
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
             android:id="@+id/spinnerBuilding"
+            android:gravity="center"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:layout_weight="1"
-            android:background="@drawable/my_spinner"
-            />
-    </LinearLayout>
+            android:paddingLeft="10dp"
+            android:popupBackground="#BBDEFB"/>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="260dp"
         android:layout_height="50dp"
@@ -66,7 +75,7 @@
             android:hint="@string/post"
             android:onClick="post"
             android:drawableLeft="@drawable/post"
-            android:color="@color/spinnerBackground" />
+            android:background="@drawable/button" />
     </LinearLayout>
 
 </LinearLayout>

@@ -3,42 +3,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_search">
+    android:background="@drawable/b1">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="70dp"
+        android:background="@color/buttonBackground">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@drawable/location" />
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
             android:id="@+id/spinnerBuilding"
+            android:gravity="center"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:background="@drawable/my_spinner" />
+            android:paddingLeft="10dp"
+            android:popupBackground="#BBDEFB"/>
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:background="@color/buttonBackground">
 
         <EditText
             android:id="@+id/etxt_fromdate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/start"
-            android:drawableLeft="@drawable/time"/>
+            android:drawableLeft="@drawable/time" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:background="@color/buttonBackground">
 
         <EditText
             android:id="@+id/keyWord"
@@ -46,7 +60,7 @@
             android:layout_height="match_parent"
             android:hint="@string/keyWord"
             android:singleLine="true"
-            android:drawableLeft="@drawable/word" />
+            android:drawableLeft="@drawable/word"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="260dp"
@@ -61,8 +75,7 @@
             android:onClick="search"
             android:hint="@string/search"
             android:drawableLeft="@drawable/search"
-            android:color="@color/spinnerBackground"
-            />
+            android:background="@drawable/button"/>
     </LinearLayout>
 
 </LinearLayout>
