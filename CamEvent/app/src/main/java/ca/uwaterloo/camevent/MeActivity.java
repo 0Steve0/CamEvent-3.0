@@ -1,6 +1,7 @@
 package ca.uwaterloo.camevent;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,6 +28,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +43,7 @@ import layout.SubPage01;
 
 //import ca.uwaterloo.maptest.R;
 
-public class MeActivity extends AppCompatActivity
+public class MeActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     /**
@@ -53,6 +62,7 @@ public class MeActivity extends AppCompatActivity
      */
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    private static final String TAG = "MeActivity";
     private ViewPager mViewPager;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -100,16 +110,41 @@ public class MeActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
+
+
+
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         //How to change elements in the header programatically
         View headerView = navigationView.getHeaderView(0);
         TextView emailText = (TextView) headerView.findViewById(R.id.email);
-        emailText.setText("newemail@email.com");
+
+
+        TextView username = (TextView) headerView.findViewById(R.id.username);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
+
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            String uid = user.getUid();
+            username.setText(name);
+            emailText.setText(email);
+        } else {
+            // No user is signed in
+
+        }
 
         navigationView.setNavigationItemSelectedListener(this);
 
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -135,7 +170,7 @@ public class MeActivity extends AppCompatActivity
     }
     private void goToPostActivity() {
         //jump to second activity
-        Intent intent = new Intent(this, SignInActivity.class);
+        Intent intent = new Intent(this, PostActivity.class);
         startActivity(intent);
         this.finish();
 
@@ -186,6 +221,7 @@ public class MeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
 
     /**

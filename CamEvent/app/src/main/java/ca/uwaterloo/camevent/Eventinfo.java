@@ -1,34 +1,48 @@
 package ca.uwaterloo.camevent;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by sound on 2016/10/24.
  */
 public class Eventinfo {
+    public String uid;
+    public String author;
     private String EventTitle;
-    private String EventLocationName;
+    private String EventLocation;
+    private String  EventDesc;
+    private String capacity;
+    private String  EventLink;
+    private String  fromDate;
+    private String fromTime;
     private String EventLatitude;
     private String EventLongitude;
-    private String  EventDescriptionRow;
-    private String  EventLink;
-    private String  EventDate;
+    public int starCount = 0;
+    public Map<String, Boolean> stars = new HashMap<>();
+
     public Eventinfo() {
 
     }
+
     public  Eventinfo(String eventTitle,String eventLocationName,String eventLatitude,String eventLongitude,String eventDescriptionRow,String eventLink,String eventDate) {
         this.EventTitle=eventTitle;
-        this.EventLocationName=eventLocationName;
+        this.EventLocation=eventLocationName;
         this.EventLatitude=eventLatitude;
         this.EventLongitude=eventLongitude;
-        this.EventDescriptionRow=eventDescriptionRow;
+        this.EventDesc=eventDescriptionRow;
         this.EventLink=eventLink;
-        this.EventDate=eventDate;
+        this.fromDate=eventDate;
     }
+
+
+
     public String getEventDescriptionRow() {
-        return EventDescriptionRow;
+        return EventDesc;
     }
 
     public void setEventDescriptionRow(String eventDescriptionRow) {
-        EventDescriptionRow = eventDescriptionRow;
+        EventDesc = eventDescriptionRow;
     }
 
     public String getEventTitle() {
@@ -40,11 +54,11 @@ public class Eventinfo {
     }
 
     public String getEventLocationName() {
-        return EventLocationName;
+        return EventLocation;
     }
 
     public void setEventLocationName(String eventLocationName) {
-        EventLocationName = eventLocationName;
+        EventLocation = eventLocationName;
     }
 
     public String getEventLatitude() {
@@ -72,11 +86,11 @@ public class Eventinfo {
     }
 
     public String getEventDate() {
-        return EventDate;
+        return fromDate;
     }
 
     public void setEventDate(String eventDate) {
-        EventDate = eventDate;
+        fromDate = eventDate;
     }
 
 
