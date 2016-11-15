@@ -25,17 +25,6 @@ public class Eventinfo {
 
     }
 
-    public Eventinfo(String uid, String author, String EventTitle, String EventDesc,String eventLocation,String capacity,String fromDate,String fromTime) {
-        this.uid = uid;
-        this.author = author;
-        this.EventTitle = EventTitle;
-        this.EventDesc = EventDesc;
-        this.EventLocation=eventLocation;
-        this.capacity=capacity;
-        this.fromDate=fromDate;
-        this.fromTime=fromTime;
-    }
-
     public  Eventinfo(String eventTitle,String eventLocationName,String eventLatitude,String eventLongitude,String eventDescriptionRow,String eventLink,String eventDate) {
         this.EventTitle=eventTitle;
         this.EventLocation=eventLocationName;
@@ -46,21 +35,7 @@ public class Eventinfo {
         this.fromDate=eventDate;
     }
 
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("uid", uid);
-        result.put("author", author);
-        result.put("title", EventTitle);
-        result.put("desc", EventDesc);
-        result.put("location", EventLocation);
-        result.put("capacity", capacity);
-        result.put("fromDate", fromDate);
-        result.put("fromTime", fromTime);
-        result.put("starCount", starCount);
-        result.put("stars", stars);
 
-        return result;
-    }
 
     public String getEventDescriptionRow() {
         return EventDesc;

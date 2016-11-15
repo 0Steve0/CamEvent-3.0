@@ -254,7 +254,7 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
         String key = mDatabase.child("posts").push().getKey();
-        Eventinfo eventinfo = new Eventinfo(uid, author, title, desc,location,capacity,fromDate,fromTime);
+        PostEvent eventinfo = new PostEvent(uid, author, title, desc,location,capacity,fromDate,fromTime, null, null, null);
         Map<String, Object> postValues = eventinfo.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
